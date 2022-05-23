@@ -1,5 +1,5 @@
 const countdown = () => {
-  const wedding = new Date("July 17, 2022 00:00:00").getTime();
+  const wedding = new Date("May 27, 2022 18:30:00").getTime();
   console.log(wedding);
   const now = new Date().getTime();
   console.log(now);

@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px dotted salmon;
+    /* border: 1px dotted salmon; */
 }
 
 body {
@@ -12,5 +12,23 @@ body {
 h2 {
     font-size: 5rem;
     font-weight: bold;
+    padding: 3rem;
     
+}.coming-soon {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.day, .hour, .minute, .second {
+    font-size: 3rem;
+}
+

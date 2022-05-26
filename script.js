@@ -1,10 +1,18 @@
 const countdown = () => {
   const wedding = new Date("May 27, 2022 18:30:00").getTime();
-  console.log(wedding);
+  let container = document.querySelector(".countdown");
+  // console.log(container);
+  // console.log(wedding);
   const now = new Date().getTime();
-  console.log(now);
+  // console.log(now);
 
   const gap = wedding - now;
+  // const gap = 0;
+  // console.log(gap);
+  if (gap === 0){
+    container.innerText = "NOW!"
+    container.style.fontSize = "10rem"
+  }
 
   const second = 1000;
   const minute = second * 60;

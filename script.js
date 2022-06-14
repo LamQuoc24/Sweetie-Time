@@ -1,17 +1,14 @@
 const countdown = () => {
-  const wedding = new Date("May 27, 2022 18:30:00").getTime();
+  const wedding = new Date("July 20, 2022 24:00:00").getTime();
   let container = document.querySelector(".countdown");
-  // console.log(container);
-  // console.log(wedding);
+
   const now = new Date().getTime();
-  // console.log(now);
 
   const gap = wedding - now;
-  // const gap = 0;
-  // console.log(gap);
-  if (gap === 0){
-    container.innerText = "NOW!"
-    container.style.fontSize = "10rem"
+
+  if (gap === 0) {
+    container.innerText = "NOW!";
+    container.style.fontSize = "10rem";
   }
 
   const second = 1000;

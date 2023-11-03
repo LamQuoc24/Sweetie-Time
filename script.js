@@ -1,14 +1,17 @@
 const countdown = () => {
-  const wedding = new Date("December 01, 2023 24:00:00").getTime();
+  // Corrected the time to 00:00:00 to represent the beginning of December 1st
+  const wedding = new Date("December 01, 2023 00:00:00").getTime();
   let container = document.querySelector(".countdown");
 
   const now = new Date().getTime();
 
   const gap = wedding - now;
 
-  if (gap === 0) {
+  if (gap <= 0) {
     container.innerText = "NOW!";
     container.style.fontSize = "10rem";
+    // Stop the countdown once the date is reached
+    return; 
   }
 
   const second = 1000;
@@ -27,25 +30,30 @@ const countdown = () => {
   document.querySelector(".second").innerText = textSecond;
 };
 
+// Make sure to clear this interval somewhere when the wedding date is past
 setInterval(countdown, 1000);
 
 /* -------------------------------------------------------------------------- */
 
 let array = [17, 11, 60, 25, 150, 225, 31, 120];
 
-function maxProfitDays(arraygiven) {
+function maxProfitDays(arrayGiven) {
   let maxProfit = 0;
-  let timearray = [];
-  for (i = 0; i < arraygiven.length; i++) {
-    for (j = i + 1; j <= arraygiven.length; j++) {
-      let currDiff = arraygiven[j] - arraygiven[i];
+  let timeArray = [];
+  for (let i = 0; i < arrayGiven.length; i++) {
+    for (let j = i + 1; j < arrayGiven.length; j++) { // Corrected loop condition
+      let currDiff = arrayGiven[j] - arrayGiven[i];
       if (currDiff > maxProfit) {
         maxProfit = currDiff;
-        timearray = [i, j];
+        timeArray = [i, j];
       }
     }
   }
-  console.log(maxProfit);
-  console.log(timearray);
+  console.log(maxProfit); // Max profit
+  console.log(timeArray); // Days to buy and sell
 }
+
 maxProfitDays(array);
+
+// Note: To prevent NaN, make sure all selectors used (.day, .hour, .minute, .second)
+// do actually exist in the HTML document and that the array passed to maxProfitDays is numeric.
